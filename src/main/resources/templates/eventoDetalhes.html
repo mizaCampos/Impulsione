@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do evento</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        /* Impede a barra de rolagem vertical */
+        background: var(--preta);
+        background-color: black;
+        font-family: 'Arial', Times, serif;
+        color: white;
+    }
+
+    html,
+    body,
+    .filme-principal {
+        height: 100%;
+    }
+
+    .filme-principal {
+        font-size: 16px;
+        text-align: justify;
+        background: linear-gradient(rgba(0, 0, 0, 0.50), rgba(45, 2, 62, 0.796));
+        /* Substitua 'sua-imagem.jpg' pela imagem de fundo desejada */
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        /* Isso faz com que o fundo fique fixo */
+        height: 100vh;
+        width: 46%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 30px;
+        overflow-y: auto;
+    }
+
+    .background-img {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 50%;
+        height: 100%;
+        /* Adiciona sombra interna com raio */
+        z-index: -1;
+        /* Coloca a imagem de fundo atrás do conteúdo */
+    }
+
+    .background-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .conteudo {
+        margin: 30px 0;
+        max-width: 70%;
+    }
+
+    .descricao {
+        width: 50%;
+    }
+
+    /* Restante do seu CSS */
+
+
+    .filme-principal .titulo {
+        margin-top: 5%;
+        font-size: 40px;
+        font-family: 'Trebuchet MS', Arial, sans-serif;
+    }
+
+    .botao {
+        background-color: rgba(44, 1, 61, 0.979);
+        border: none;
+        color: white;
+        padding: 15px 30px;
+        margin-right: 15px;
+        font-size: 12px;
+        cursor: pointer;
+        transition: 0.3s ease all;
+    }
+
+    .botao:hover {
+        background-color: white;
+        color: black;
+    }
+
+    .botao i {
+        margin-right: 8px;
+    }
+
+    .container {
+        margin-left: 5%;
+        padding-left: 20px;
+        height: 100%;
+    }
+
+    .filme-principal .container {
+        width: 100%;
+    }
+
+    .botao i {
+        font-size: 20px;
+        /* Tamanho do ícone */
+        margin-right: 8px;
+        /* Espaço entre o ícone e o texto */
+        color: #ffffff;
+        /* Cor do ícone */
+    }
+</style>
+
+<body>
+<header>
+    <br>
+    <div class="container">
+        <nav>
+            <button class="botao">
+                <i class="fas fa-home"></i> Voltar
+            </button>
+        </nav>
+    </div>
+</header>
+<main>
+    <div class="filme-principal">
+        <div class="background-img">
+            <img th:src="@{|data:image/jpeg;base64,${imagem}|}">
+        </div>
+        <div class="container">
+
+            <h3 class="titulo" th:text="${eventName}">HOUSE OF CARDS</h3>
+
+            <h5>Decrição</h5>
+            <p class="descricao"><span th:text="${desc}"></span> </p>
+
+            <h5>Data</h5>
+            <p class="data" ><span th:text="${data}"></span></p>
+
+            <h5>Horário</h5>
+            <p class="horário"><span th:text="${horario}"></span></p>
+
+            <h5>Endereço</h5>
+            <p class="endereco" ><span th:text="${endereco}"></span></p>
+
+
+            <div>
+
+                <button role="button" class="botao">
+                    <i class="fas fa-play"></i>
+                    FAVORITAR
+                </button>
+                <button role="button" class="botao">
+                    <i class="fas fa-info-circle"></i>
+                    COMPARTILHAR
+                </button>
+                <button role="button" class="botao">
+                    <i class="fas fa-info-circle"></i>
+                    PERFIL DO ANUNCIANTE
+                </button>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+
+</html>

@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+
+header{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.979);
+    padding: 20px;
+    width: 100%;
+    height: 30px;
+}
+
+.left h3{
+    color: rgb(231, 18, 203);
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.left span{
+    color: rgb(69, 18, 116);
+}
+
+.sair_btn{
+    padding: 5px;
+    background-color: rgb(7, 7, 7);
+    text-decoration: none;
+    float: right;
+    margin-top: -30px;
+    margin-right: 40px;
+    border-radius: 2px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    transition: 0.5s;
+    transition-property: background;
+}
+
+.sair_btn:hover{
+    background-color: rgb(27, 3, 49);
+}
+
+.siderbar{
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    margin-top: 70px;
+    padding-top: 30px;
+    left: 0;
+    background-color: rgb(8, 3, 12);
+    transition: 0.5s;
+    transition-property: left;
+}
+
+.siderbar .image{
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+}
+
+.siderbar h2{
+    color: rgb(231, 18, 203);
+    margin-top: 0;
+    margin-bottom: 20px;
+    border: #fff;
+}
+
+
+
+.siderbar button{
+
+    text-decoration: none;
+    color: black;
+    border: 5px;
+    padding: 3px;
+    border-radius: 9px;
+    font-weight: bolder;
+    background: rgb(231, 18, 203);
+    cursor: pointer
+    margin-top: 15px;
+}
+
+.siderbar a{
+    color: #fff;
+    display: block;
+    width: 100%;
+    line-height: 60px;
+    text-decoration: none;
+    padding-left: 40px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    transition-property: background;
+}
+
+.siderbar a:hover{
+    background-color: rgb(231, 18, 203);
+}
+
+.siderbar ion-icon{
+    padding-right: 10px;
+}
+
+label #sidebar_btn{
+    z-index: 1;
+    position: fixed;
+    left: 300px;
+    color: #fff;
+    font-size: 25px;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: 0.5s;
+    transition-property: color;
+}
+
+label #siderbar_btn:hover{
+    color: rgb(48, 4, 88);
+}
+
+
+
+.content{
+    background: url("../img/fundo7.jpg") no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.content .content-info{
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente (opcional) */
+    height: 100vh;
+    width: auto;/* Isso garante que o conteúdo seja centralizado na página inteira. */
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 900;
+
+}
+
+.content .content-info {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content .container{
+    width: 900px;
+    height: 600px;
+}
+
+.content .container h1{
+    font-weight: bold;
+    font-size: 40px;
+    color: #fff;
+    margin-left: 10px;
+    margin-bottom: 15px;
+}
+
+
+.content .container p{
+    font-weight: 300;
+    font-size: 20px;
+    color: #fff;
+    margin-left: 10px;
+    margin-bottom: 16px;
+}
+
+
+.glass{
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 11px 32px 0 rgb(0, 0, 0, 0.37);
+}
+
+.content .container .box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content .container .box button{
+    margin-left: 15.5rem;
+    margin-right: 2rem;
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+    border: 5px;
+    border-radius: 9px;
+    font-weight: bolder;
+    background-color: #fff;
+}
+
+.container span{
+    font-weight: bold;
+}
+
+
+#login-modal{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal{
+    background: #e6ecf0;
+    padding: 10px 0px 20px 0;
+    border-radius: 10px;
+    width: 450px;
+    text-align: center;
+}
+
+.top-form{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.top-form .close-modal{
+    cursor: pointer;
+    padding: 0 20px;
+    font-size: 20px;
+}
+
+.login-form h2{
+    letter-spacing: 2px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.login-form form input{
+    width: 75%;
+    margin-bottom: 20px;
+    padding: 12px 12px;
+    box-sizing: border-box;
+    border: 1px solid #d0d5d8;
+    border-radius: 3px;
+}
+
+.login-form button{
+    padding: 12px 0;
+    width: 75%;
+    background: #5dca88;
+    border: 0;
+    border-radius: 3px;
+    color: white;
+    margin: 10px auto;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+

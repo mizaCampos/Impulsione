@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Alterar Senha</title>
+    <link rel="stylesheet" th:href="@{/css/alterar.css}"/>
+</head>
+
+<body>
+
+<div class="overlay">
+
+
+    <div class="formEsqueciSenha">
+
+        <h3 style="color: black;">Redefina sua senha</h3>
+
+        <br><br>
+
+        <form th:action="@{/alterarComToken}" method="post">
+
+
+            <label for="newPassword">Nova senha:</label>
+            <input type="newPassword" id="newPassword" name="newPassword" required>
+
+
+            <label for="repeatPassword">Repeta a senha:</label>
+            <input type="repeatPassword" id="repeatPassword" name="repeatPassword" required>
+
+            <br>
+            <button type="submit">Enviar</button>
+        </form>
+
+    </div>
+
+
+</div>
+
+</body>
+
+
+</html>
+
+

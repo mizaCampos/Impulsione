@@ -1,0 +1,14 @@
+body {
+       font-family: Arial, sans-serif;
+       text-align: center;
+       margin: 20px;
+       background-image: url("../img/mulherdefone.jpg");
+       background-size: cover;
+       background-position: center center;
+       background-attachment: fixed;
+}
+#token-input {
+        width: 100px;
+        padding: 10px;
+        font-size: 20px;
+}

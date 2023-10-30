@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/login.css}" />
+    <title>Tela de Login</title>
+</head>
+<body>
+<div class="background">
+    <div class="login-container">
+        <div class="left">
+            <h2>IMPULSIONE</h2>
+        </div>
+
+        <div class="right">
+            <p>ENTRAR</p>
+
+            <form class="user" th:action = "@{/do-login}" method="POST">
+                <input type="email" name="username" placeholder="Digite seu e-mail" required>
+
+                <input type="password" name="password" placeholder="Digite sua senha">
+
+                <button id="login-button" type="submit">Entrar</button>
+
+            </form>
+
+            <div class="links">
+                <br>
+                <a href="javascript:void(0);" id="esqueceuSenhaLink">Esqueceu a senha?</a>
+            </div>
+            <div id="anunciantesLogin">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="overlay" id="esqueceuSenhaOverlay" style="display: none;">
+    <div id="formEsqueciSenha">
+        <form th:action="@{/forgotPassword}" method="post">
+            <p>Esqueci Minha Senha</p>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <button type="submit">Enviar</button>
+        </form>
+        <button id="back-button" onclick="fecharEsqueceuSenha()">Voltar</button>
+    </div>
+</div>
+
+<script>
+    function redirecionarParaEventos() {
+        // Use window.location.href para redirecionar para a página de eventos.html
+        window.location.href = "eventos.html";
+    }
+</script>
+
+<script>
+    function abrirEsqueceuSenha() {
+        var esqueceuSenhaOverlay = document.getElementById("esqueceuSenhaOverlay");
+        esqueceuSenhaOverlay.style.display = "block"; // Mostra a sobreposição
+    }
+
+    function fecharEsqueceuSenha() {
+        var esqueceuSenhaOverlay = document.getElementById("esqueceuSenhaOverlay");
+        esqueceuSenhaOverlay.style.display = "none"; // Oculta a sobreposição
+    }
+
+    var esqueceuSenhaLink = document.getElementById("esqueceuSenhaLink");
+    esqueceuSenhaLink.addEventListener("click", abrirEsqueceuSenha);
+</script>
+</body>
+
+
+
+</html>

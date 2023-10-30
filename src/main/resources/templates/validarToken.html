@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">>
+    <title>Verificação de Token</title>
+    <link rel="stylesheet" th:href="@{/css/alterar2.css}" />
+    <link rel="stylesheet" href="assets/css/alterar2.css"/>
+
+
+
+</head>
+
+<div class="overlay">
+
+
+    <div class="formEsqueciSenha">
+
+
+        <form th:action="@{/obterToken}" method="post">
+
+            <h3 style="color: black;">Informe seu Token de 6 Dígitos</h3>
+            <input type="text" id="token" name="token" maxlength="6" pattern="[0-9]{6}"
+                   placeholder="O token deve conter 6 dígitos numéricos" title="O token deve conter 6 dígitos"
+                   required>
+            <br>
+            <button type="submit">Enviar</button>
+        </form>
+
+    </div>
+
+
+</div>
+
+
+
+
+</html>

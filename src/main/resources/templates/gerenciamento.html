@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/gerenciamento.css}" />
+    <link rel="stylesheet" th:href="@{/css/modal.css}" />
+    <script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js}"></script>
+    <title>Gerenciamento De conta</title>
+</head>
+<body>
+<header>
+    <div class="left">
+        <h3>Gerenciamento De conta</h3>
+    </div>
+    <div class="rigth">
+        <a href="#" class="sair_btn">SAIR</a>
+    </div>
+</header>
+
+<div class="siderbar">
+    <center>
+
+        <h2 th:text="${firstName}" >Nome</h2>
+        <img style="height: 200px; width: 200px;" th:src="@{|data:image/jpeg;base64,${imagem}|}">
+        <button id="imagem">Alterar imagem</button>
+
+
+    </center>
+    <a href="#"><ion-icon name="desktop-outline"><span></span></ion-icon><span>Painel</span></a>
+    <a href="configuracoes.html"><ion-icon name="calendar-outline"><span></span></ion-icon><span>Configurações</span></a>
+    <a href="#"><ion-icon name="desktop-outline"><span></span></ion-icon><span>Eventos</span></a>
+    <a href="#"><ion-icon name="desktop-outline"><span></span></ion-icon>Minhas Informações</a>
+    <a href="#"><ion-icon name="desktop-outline"><span></span></ion-icon></a>
+</div>
+
+<div class="content">
+    <div class="container glass">
+
+        <div class="box">
+            <h1>Configurações</h1>
+        </div>
+
+        <div class="box">
+            <p>Nome: <span th:text="${firstName}"></span></p>
+            <button id= "firstName">EDITAR</button>
+        </div>
+
+        <div class="box">
+            <p>Sobrenome:  <span th:text="${lastname}"></span></p>
+            <button id= "sobrenome">EDITAR</button>
+        </div>
+
+        <div class="box">
+            <p>Telefone:  <span th:text="${contac}"></span></p>
+            <button id= "telefone">EDITAR</button>
+        </div>
+
+        <div class="box">
+            <p>Endereço:  <span th:text="${addres}"></span></p>
+            <button id= "endereco">EDITAR</button>
+        </div>
+
+        <div class="box">
+            <p>Email: <span th:text="${email}"></span></p>
+            <button id= "email">EDITAR</button>
+        </div>
+
+        <div class="box">
+            <p>Senha: <span>****</span></p>
+            <button id= "senha">EDITAR</button>
+        </div>
+
+
+    </div>
+</div>
+</div>
+
+<!-- modal para nome -->
+<div id="login-modal">
+    <div class="modal">
+        <div class="top-form">
+            <div class="close-modal">
+                &#10006;
+            </div>
+        </div>
+        <div class="login-form">
+            <h2>Alterar Nome</h2>
+            <form th:action="@{/cliente/alterarNome}" method="post">
+                <input type="text=" id="nome" name="nome" required class="form-control" placeholder="nome">
+                <button type="submit" class="submit-btn">Alterar</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function(){
+        $('#firstName').click(function(){
+            $('#login-modal').fadeIn().css("display", "flex");
+        });
+
+        $('.close-modal').click(function(){
+            $('#login-modal').fadeOut();
+        })
+    });
+</script>
+
+<!-- final -->
+
+
+<!-- Sobrenome modal -->
+<div id="sobrenome-modal">
+    <div class="modal">
+        <div class="top-form">
+            <div class="close-modal">
+                &#10006;
+            </div>
+        </div>
+        <div class="login-form">
+            <h2>Alterar Sobrenome</h2>
+            <form th:action="@{/cliente/alterarLastName}" method="post">
+                <input type="text" id="lastName" name="lastName" required placeholder="Digite o Sobrenome">
+                <button type="submit" class="submit-btn">Alterar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function(){
+        $('#sobrenome').click(function(){
+            $('#sobrenome-modal').fadeIn().css("display", "flex");
+        });
+
+        $('.close-modal').click(function(){
+            $('#sobrenome-modal').fadeOut();
+        })
+    });
+</script>
+
+<!-- final -->
+
+
+<!-- Telefone modal -->
+<div id="telefone-modal">
+    <div class="modal">
+        <div class="top-form">
+            <div class="close-modal">
+                &#10006;
+            </div>
+        </div>
+        <div class="login-form">
+            <h2>Alterar Telefone</h2>
+            <form th:action="@{/cliente/alterarTelefone}" method="post">
+                <input type="text" id="newTelefone" name="telefone" required placeholder="Digite o Telefone">
+                <button type="submit" class="submit-btn">Alterar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function(){
+        $('#telefone').click(function(){
+            $('#telefone-modal').fadeIn().css("display", "flex");
+        });
+
+        $('.close-modal').click(function(){
+            $('#telefone-modal').fadeOut();
+        })
+    });
+</script>
+
+<!-- final -->
+
+
+
+<!-- endereco modal -->
+<div id="endereco-modal">
+    <div class="modal">
+        <div class="top-form">
+            <div class="close-modal">
+                &#10006;
+            </div>
+        </div>
+        <div class="login-form">
+            <h2>Alterar Endereço</h2>
+            <form th:action="@{/cliente/alterarEndereco}" method="post">
+                <input type="text" id="newendereco" name="endereco" required placeholder="Digite o Telefone">
+                <button type="submit" class="submit-btn">Alterar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function(){
+        $('#endereco').click(function(){
+            $('#endereco-modal').fadeIn().css("display", "flex");
+        });
+
+        $('.close-modal').click(function(){
+            $('#endereco-modal').fadeOut();
+        })
+    });
+</script>
+
+<!-- final -->
+
+
+<!-- email modal -->
+<div id="email-modal">
+    <div class="modal">
+        <div class="top-form">
+            <div class="close-modal">
+                &#10006;
+            </div>
+        </div>
+        <div class="login-form">
+            <h2>Alterar Email</h2>
+            <form th:action="@{/cliente/alterarEmail}" method="post">
+                <input type="text" id="emailNew" name="email" required placeholder="Digite o Email">
+                <button type="submit" class="submit-btn">Alterar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function(){
+        $('#email').click(function(){
+            $('#email-modal').fadeIn().css("display", "flex");
+        });
+
+        $('.close-modal').click(function(){
+            $('#email-modal').fadeOut();
+        })
+    });
+</script>
+
+<!-- final -->
+
+<!-- senha modal -->
+<div id="senha-modal">
+    <div class="modal">
+        <div class="top-form">
+            <div class="close-modal">
+                &#10006;
+            </div>
+        </div>
+        <div class="login-form">
+            <h2>Alterar Senha</h2>
+            <form th:action="@{/cliente/alterar}" method="post">
+                <input type="password" id="password" name="password" required placeholder="Senha Atual">
+                <input type="password" id="newPassword" name="newPassword" required  placeholder="Nova Senha">
+                <input type="repeatPassword" id="repeatPassword" name="repeatPassword" required placeholder="Confirme a senha">
+                <button type="submit" class="submit-btn">Alterar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function(){
+        $('#senha').click(function(){
+            $('#senha-modal').fadeIn().css("display", "flex");
+        });
+
+        $('.close-modal').click(function(){
+            $('#senha-modal').fadeOut();
+        })
+    });
+</script>
+
+<!-- final -->
+
+
+
+<!-- Imagem modal -->
+<div id="imagem-modal">
+    <div class="modal">
+        <div class="top-form">
+            <div class="close-modal">
+                &#10006;
+            </div>
+        </div>
+        <div class="login-form">
+            <form th:action="@{/cliente/adicionarFoto}" method="post" enctype="multipart/form-data">
+                <input  type="file" id="imageCliente" class="input-file"  name="imageCliente" accept="image/*">
+                <button type="submit" class="submit-btn">Alterar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function(){
+        $('#imagem').click(function(){
+            $('#imagem-modal').fadeIn().css("display", "flex");
+        });
+
+        $('.close-modal').click(function(){
+            $('#imagem-modal').fadeOut();
+        })
+    });
+</script>
+
+<!-- final -->
+
+
+
+<script type="module" th:src="@{https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js}"></script>
+<script nomodule th:src="@{https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js}"></script>
+
+
+
+
+
+</body>
+</html>

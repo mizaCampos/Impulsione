@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/css/cadastroForm.css}" rel="stylesheet" />
+    <title>Cadastre-se</title>
+
+</head>
+
+<body>
+<div class="container">
+    <div class="form-image">
+        <img th:src="@{/img/LogoMark.jpeg}" alt="">
+    </div>
+    <div class="form">
+        <form th:action = "@{/register-new}" th:object = "${clienteDto}" method="POST">
+            <div class="form-header">
+                <div class="title">
+                    <h1>Cadastre-se</h1>
+                </div>
+                <div class="login-button">
+                    <button><a href="#">Entrar</a></button>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <div class="input-box">
+                    <label for="firstname">Primeiro Nome</label>
+                    <input id="firstname" type="text" th:field = "*{firstName}" placeholder="Digite o seu primeiro nome" name="firstname">
+                    <div class="alert alert-danger" th:if = "${#fields.hasErrors('firstName')}" th:errors = "*{firstName}"> </div>
+                </div>
+
+                <div class="input-box">
+                    <label for="lastname">Sobrenome</label>
+                    <input id="lastname" name="lastname" type="text" th:field = "*{lastName}"placeholder="Digite seu sobrenome" required>
+                    <div class="alert alert-danger" th:if = "${#fields.hasErrors('lastName')}"th:errors = "*{lastName}"></div>
+                </div>
+
+                <div class="input-box">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email"  th:field = "*{username}"placeholder="Digite seu e-mail" required>
+                </div>
+                <!--
+                                    <div class="input-box">
+                                        <label for="number">Celular</label>
+                                        <input id="number" type="tel" name="number" placeholder="(xx) xxxx-xxxx" required>
+                                    </div> -->
+
+
+                <div class="input-box">
+                    <label for="password">Telefone</label>
+                    <input type="text" id="telephone" name="telephone" th:field = "*{telephone}" placeholder="Informe o seu numero">
+                    <div class="alert alert-danger" th:if = "${#fields.hasErrors('telephone')}"th:errors = "*{telephone}"></div>
+                </div>
+
+                <div class="input-box">
+                    <label for="password">Endereço</label>
+                    <input type="text" id="address" name="address" th:field = "*{address}" placeholder="Informe o Endereço">
+                    <div class="alert alert-danger" th:if = "${#fields.hasErrors('address')}"th:errors = "*{address}"></div>
+                </div>
+
+                <div class="input-box">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" th:field = "*{password}" placeholder="Digite sua senha">
+                    <div class="alert alert-danger" th:if = "${#fields.hasErrors('password')}"th:errors = "*{password}"></div>
+                </div>
+
+                <div class="input-box">
+                    <label for="confirmPassword">Confirme sua Senha</label>
+                    <input id="confirmPassword" name="confirmPassword" type="password" th:field = "*{repeatPassword}" placeholder="Digite sua senha novamente" required></div>
+            </div>
+
+            <div class="continue-button">
+                <button><a href="#">Continuar</a> </button>
+            </div>
+        </form>
+
+    </div>
+
+
+
+</div>
+
+</div>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

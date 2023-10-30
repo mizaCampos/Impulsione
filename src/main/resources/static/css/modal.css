@@ -1,0 +1,60 @@
+#login-modal, #sobrenome-modal, #telefone-modal, #endereco-modal,  #email-modal, #senha-modal, #imagem-modal{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.6); /* Fundo semi-transparente */
+	z-index: 100;
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal{
+	background: rgb(231, 18, 203);
+	padding: 10px 0px 20px 0;
+	border-radius: 10px;
+	width: 450px;
+	text-align: center;
+	 box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+
+
+.top-form{
+	display: flex;
+	justify-content: flex-end;
+}
+
+.top-form .close-modal{
+	cursor: pointer;
+	padding: 0 20px;
+	font-size: 20px;
+}
+
+.login-form h2{
+	letter-spacing: 2px;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+
+.login-form form input{
+	width: 75%;
+	margin-bottom: 20px;
+	padding: 12px 12px;
+	box-sizing: border-box;
+	border: 1px solid #d0d5d8;
+	border-radius: 3px;
+}
+
+.login-form button{
+	padding: 12px 0;
+	width: 75%;
+	background: black;
+	border: 0;
+	border-radius: 3px;
+	color: white;
+	margin: 10px auto;
+	cursor: pointer;
+}

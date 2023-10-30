@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body{
+    height: 900vh;
+    background-color: #202020;
+}
+
+nav.menu-lateral{
+    width: 200px;
+    height: 100%;
+    background-color: #202020;
+    padding: 40px 0 40px 1%;
+    box-shadow: 3px 0 0 #801c77;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: .2s;
+
+}
+
+label{
+    color: #fff;
+    padding: 7px;
+}
+
+nav.menu-lateral.expandir{
+    width: 300px;
+}
+
+.btn-expandir{
+    width: 100%;
+    padding-left: 10px;
+}
+
+.btn-expandir > i{
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+ul{
+    height: 100%;
+    list-style-type: none;
+}
+
+ul li.item-menu{
+    transition: .25;
+}
+
+ul li.ativo{
+    background-color: #801c77;
+}
+
+ul li.item-menu:hover{
+    background-color: #801c77;
+}
+
+ul li.item-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px 4%;
+    display: flex;
+    margin-bottom: 20px;
+    line-height: 40px;
+
+}
+
+ul li.item-menu a .txt-link{
+    margin-left: 70px;
+    transition: 1s;
+    opacity: 0;
+}
+
+nav.menu-lateral.expandir .txt-link{
+    margin-left: 40px;
+    opacity: 1;
+}
+
+ul li.item-menu a .icon > i{
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+
+/* formulario */
+
+h1{
+    font-size: 40px;
+    color: #fff;
+}
+
+.container{
+    padding-left: 400px;
+    padding-top: 3%;
+}
+
+.container form{
+    width: 100%;
+
+}
+
+label, input, textarea, button{
+    display: block;
+}
+
+input, textarea, button,select{
+    width: 100%;
+    font: inherit;
+    padding: 1.25rem;
+    display: block;
+    font-weight: 700;
+}
+
+input, area,select{
+    margin-bottom: 1rem;
+    color: white;
+    background-color: #323644;
+    border: 0.125rem solid transparent;
+    border-radius: 1.125rem;
+    transition: border-color 0.3s;
+    box-shadow: 0.3;
+}
+
+input:hover,
+input:focus,
+textarea:hover
+textarea:focus{
+    outline: none;
+    border-color: #801c77;
+    box-shadow: 0 0 0 0.3125rem #26344a;
+}
+
+label{
+    margin-bottom: 0.5rem;
+    columns: #84868f;
+}
+
+.container form textarea{
+    min-height: 12.5rem;
+    resize: vertical;
+    display: flex;
+
+}
+
+button{
+    border: none;
+    border-radius: 10px;
+    color: #801c77;
+    background: 801c77;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+button:hover,button:focus{
+    outline: none;
+    background: #801c77;
+}
+
+.event-form{
+    display: flex;
+    flex-wrap: wrap;
+
+    padding: 1rem 0;
+    width: 100%;
+}
+
+.form-group{
+    width: 40%;
+    align-items: center;
+    padding-right: 100px;
+    margin-bottom: 1.1rem;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 300px;
+}
+
+.buttons .form-group{
+    width: 500px;
+}
+
+.form-group-img{
+    width: 460px;
+}
