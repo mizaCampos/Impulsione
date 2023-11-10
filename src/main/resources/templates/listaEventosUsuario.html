@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Eventos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: black;
+            position: fixed;
+            color: #b040ff;
+            width: 100%;
+            padding: 10px;
+            text-align: start;
+        }
+
+        .logo {
+            font-size: 24px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        .perfil {
+            padding-top: 50px;
+            background-color: black;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .perfil img {
+            margin-top: 3%;
+            border-radius: 20px;
+            width: 300px;
+            height: 300px;
+            height: auto;
+        }
+
+        main {
+            background-color: black;
+            box-shadow: 0px -206px 240px #240136fb;
+            color: #b040ff;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .event {
+            flex: 0 0 calc(33.33% - 20px);
+            margin-bottom: 20px;
+            border-radius: 25px;
+            border: 1px solid #00000000;
+            padding: 10px;
+            box-sizing: border-box;
+            display: flex;
+        }
+
+        .event img {
+            width: 35%;
+            height: 100%;
+            margin-right: 10px;
+        }
+
+        .event-info {
+            flex: 1;
+        }
+
+        h2,
+        h3 {
+            margin-bottom: 5px;
+        }
+
+        p {
+            margin-top: 15px;
+        }
+
+        a {
+            color: #c67ffa;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            opacity: 0.7;
+        }
+
+        nav {
+            text-align: center;
+            background-color: black;
+            background: linear-gradient(to top, black, black, #54028f);
+            padding: 10px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+        }
+
+        nav a {
+            color: #b040ff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a class="logo" href="#" style="color: #a800f6;">IMPULSIONE</a>
+    </header>
+
+    <div class="perfil">
+        <img src="images/logoLondon.jpg" alt="Perfil da Empresa">
+        <h1>LONDON PUB</h1>
+        <p>Telefone: (123) 456-7890</p>
+        <p>Endereço: Endereço da Empresa</p>
+    </div>
+
+    <nav>
+        <a href="#">Eventos</a>
+        <a href="#">Início</a>
+    </nav>
+
+    <main>
+        <div class="event">
+            <img src="https://www.turismosantos.com.br/static/files_turismosantos/styles/lateral/public/santos%20rock%20frejat.jpg?itok=mu8ze-F2"
+                alt="Evento 1">
+            <div class="event-info">
+                <h2>Nome do Evento 1</h2>
+                <p>Descrição do Evento 1</p>
+                <p>Endereço: Endereço do Evento 1</p>
+                <p>Telefone: (111) 222-3333</p>
+                <p>Instagram: @evento1</p>
+                <p>Data: </p>
+                <p>Horário: </p>
+            </div>
+        </div>
+
+        <div class="event">
+            <img src="https://www.agitapirenopolis.com.br/uploads/2021/11/agitapirenopolis_pirenopolis_festival_de_rock_garagem_comedoria_festival.png"
+                alt="Evento 2">
+            <div class="event-info">
+                <h2>Nome do Evento 2</h2>
+                <p>Descrição do Evento 2</p>
+                <p>Endereço: Endereço do Evento 2</p>
+                <p>Telefone: (222) 333-4444</p>
+                <p>Instagram: @evento2</p>
+                <p>Data: </p>
+                <p>Horário: </p>
+            </div>
+        </div>
+
+        <div class="event">
+            <img src="https://images.sympla.com.br/62a770f82e291.png" alt="Evento 2">
+            <div class="event-info">
+                <h2>Nome do Evento 2</h2>
+                <p>Descrição do Evento 2</p>
+                <p>Endereço: Endereço do Evento 2</p>
+                <p>Telefone: (222) 333-4444</p>
+                <p>Instagram: @evento2</p>
+                <p>Data: </p>
+                <p>Horário: </p>
+            </div>
+        </div>
+        <div class="event">
+            <img src="https://visitelondrina.com.br/wp-content/uploads/2023/02/WhatsApp-Image-2023-02-06-at-11.31.48.jpeg"
+                alt="Evento 2">
+            <div class="event-info">
+                <h2>Nome do Evento 2</h2>
+                <p>Descrição do Evento 2</p>
+                <p>Endereço: Endereço do Evento 2</p>
+                <p>Telefone: (222) 333-4444</p>
+                <p>Instagram: @evento2</p>
+                <p>Data: </p>
+                <p>Horário: </p>
+            </div>
+        </div>
+        <div class="event">
+            <img src="https://riometalsite.files.wordpress.com/2023/02/baudorock_cartaz_web.jpg?w=800" alt="Evento 2">
+            <div class="event-info">
+                <h2>Nome do Evento 2</h2>
+                <p>Descrição do Evento 2</p>
+                <p>Endereço: Endereço do Evento 2</p>
+                <p>Telefone: (222) 333-4444</p>
+                <p>Instagram: @evento2</p>
+                <p>Data: </p>
+                <p>Horário: </p>
+            </div>
+        </div>
+        <div class="event">
+            <img src="https://showpass.com.br/images/imagens-site/64c2a38a29811.jpeg" alt="Evento 2">
+            <div class="event-info">
+                <h2>Nome do Evento 2</h2>
+                <p>Descrição do Evento 2</p>
+                <p>Endereço: Endereço do Evento 2</p>
+                <p>Telefone: (222) 333-4444</p>
+                <p>Instagram: @evento2</p>
+                <p>Data: </p>
+                <p>Horário: </p>
+            </div>
+        </div>
+
+        <div class="event">
+            <img src="https://www.turismosantos.com.br/static/files_turismosantos/styles/lateral/public/santos%20rock%20frejat.jpg?itok=mu8ze-F2"
+                alt="Evento 1">
+            <div class="event-info">
+                <h2>Nome do Evento 1</h2>
+                <p>Descrição do Evento 1</p>
+                <p>Endereço: Endereço do Evento 1</p>
+                <p>Telefone: (111) 222-3333</p>
+                <p>Instagram: @evento1</p>
+                <p>Data: </p>
+                <p>Horário: </p>
+            </div>
+        </div>
+
+        <div class="event">
+            <img src="https://www.agitapirenopolis.com.br/uploads/2021/11/agitapirenopolis_pirenopolis_festival_de_rock_garagem_comedoria_festival.png"
+                alt="Evento 2">
+            <div class="event-info">
+                <h2>Nome do Evento 2</h2>
+                <p>Descrição do Evento 2</p>
+                <p>Endereço: Endereço do Evento 2</p>
+                <p>Telefone: (222) 333-4444</p>
+                <p>Instagram: @evento2</p>
+                <p>Data: </p>
+                <p>Horário: </p>
+            </div>
+        </div>
+
+        <div class="event">
+            <img src="https://images.sympla.com.br/62a770f82e291.png" alt="Evento 2">
+            <div class="event-info">
+                <h2>Nome do Evento 2</h2>
+                <p>Descrição do Evento 2</p>
+                <p>Endereço: Endereço do Evento 2</p>
+                <p>Telefone: (222) 333-4444</p>
+                <p>Instagram: @evento2</p>
+                <p>Data: </p>
+                <p>Horário: </p>
+            </div>
+        </div>
+        <div class="event">
+            <img src="https://visitelondrina.com.br/wp-content/uploads/2023/02/WhatsApp-Image-2023-02-06-at-11.31.48.jpeg"
+                alt="Evento 2">
+            <div class="event-info">
+                <h2>Nome do Evento 2</h2>
+                <p>Descrição do Evento 2</p>
+                <p>Endereço: Endereço do Evento 2</p>
+                <p>Telefone: (222) 333-4444</p>
+                <p>Instagram: @evento2</p>
+                <p>Data: </p>
+                <p>Horário: </p>
+            </div>
+        </div>
+        <div class="event">
+            <img src="https://riometalsite.files.wordpress.com/2023/02/baudorock_cartaz_web.jpg?w=800" alt="Evento 2">
+            <div class="event-info">
+                <h2>Nome do Evento 2</h2>
+                <p>Descrição do Evento 2</p>
+                <p>Endereço: Endereço do Evento 2</p>
+                <p>Telefone: (222) 333-4444</p>
+                <p>Instagram: @evento2</p>
+                <p>Data: </p>
+                <p>Horário: </p>
+            </div>
+        </div>
+        <div class="event">
+            <img src="https://showpass.com.br/images/imagens-site/64c2a38a29811.jpeg" alt="Evento 2">
+            <div class="event-info">
+                <h2>Nome do Evento 2</h2>
+                <p>Descrição do Evento 2</p>
+                <p>Endereço: Endereço do Evento 2</p>
+                <p>Telefone: (222) 333-4444</p>
+                <p>Instagram: @evento2</p>
+                <p>Data: </p>
+                <p>Horário: </p>
+            </div>
+        </div>
+        <!-- Adicione mais eventos conforme necessário -->
+    </main>
+
+</body>
+
+</html>
