@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalhes do evento</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <style>
     body {
@@ -12,8 +13,7 @@
         padding: 0;
         overflow: hidden;
         /* Impede a barra de rolagem vertical */
-        background: var(--preta);
-        background-color: black;
+        background: linear-gradient(to left, black,  black,rgb(0, 0, 0), rgb(27, 3, 49));
         font-family: 'Arial', Times, serif;
         color: white;
     }
@@ -22,19 +22,43 @@
     body,
     .filme-principal {
         height: 100%;
+        width: 100%;
+    }
+
+    .background-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%; /* A metade esquerda da div para o efeito de fundo linear */
+        height: 100%;
+        z-index: -1;
+        background: linear-gradient(to right, #ffffff, transparent); /* Efeito de fundo linear à esquerda */
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .background-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Para cobrir toda a div com a imagem de fundo */
+        display: block;
+    }
+
+    .background-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to left, black, rgba(0, 0, 0, 0.553),transparent,transparent, transparent);/* Efeito de overlay */
+        z-index: 2;
     }
 
     .filme-principal {
+        margin-left: 50%; /* Move o conteúdo para a direita para evitar sobreposição com o efeito de fundo */
         font-size: 16px;
         text-align: justify;
-        background: linear-gradient(rgba(0, 0, 0, 0.50), rgba(45, 2, 62, 0.796));
-        /* Substitua 'sua-imagem.jpg' pela imagem de fundo desejada */
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        /* Isso faz com que o fundo fique fixo */
         height: 100vh;
-        width: 46%;
+        width: 50%; /* A metade direita da div para o conteúdo */
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -43,30 +67,13 @@
         overflow-y: auto;
     }
 
-    .background-img {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        width: 50%;
-        height: 100%;
-        /* Adiciona sombra interna com raio */
-        z-index: -1;
-        /* Coloca a imagem de fundo atrás do conteúdo */
-    }
-
-    .background-img img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
     .conteudo {
         margin: 30px 0;
         max-width: 70%;
     }
 
     .descricao {
-        width: 50%;
+        width: 80%;
     }
 
     /* Restante do seu CSS */
@@ -75,11 +82,12 @@
     .filme-principal .titulo {
         margin-top: 5%;
         font-size: 40px;
-        font-family: 'Trebuchet MS', Arial, sans-serif;
+        padding: 50px;
     }
 
     .botao {
-        background-color: rgba(44, 1, 61, 0.979);
+        background-color: #180121;
+        /*background: linear-gradient(to top, rgba(0, 0, 0, 0.50), rgba(45, 2, 62, 0.796));*/
         border: none;
         color: white;
         padding: 15px 30px;
@@ -87,10 +95,11 @@
         font-size: 12px;
         cursor: pointer;
         transition: 0.3s ease all;
+        border-radius: 15px;
     }
 
     .botao:hover {
-        background-color: white;
+        background-color: #5a0483;
         color: black;
     }
 
@@ -102,6 +111,7 @@
         margin-left: 5%;
         padding-left: 20px;
         height: 100%;
+        color: #5a0483;
     }
 
     .filme-principal .container {
@@ -116,55 +126,90 @@
         color: #ffffff;
         /* Cor do ícone */
     }
+
+    #mensagem-favoritado {
+        display: none;
+        position: fixed;
+        top: 90%;
+        left: 0;
+        right: 20%;
+        background-color: transparent;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        font-size: 24px;
+        z-index: 9999;
+        transform: translateY(-50%);
+        height: 50px;
+        text-align: end;
+        padding: 20px;
+    }
 </style>
 
 <body>
 <header>
     <br>
     <div class="container">
-        <nav>
-            <button class="botao">
-                <i class="fas fa-home"></i> Voltar
-            </button>
-        </nav>
+<!--        <nav>-->
+<!--            <button class="botao">-->
+<!--                <i class="fas fa-home"></i>-->
+<!--            </button>-->
+<!--        </nav>-->
     </div>
 </header>
 <main>
     <div class="filme-principal">
         <div class="background-img">
             <img th:src="@{|data:image/jpeg;base64,${imagem}|}">
+            <div class="background-overlay"></div>
         </div>
         <div class="container">
 
-            <h3 class="titulo" th:text="${eventName}">HOUSE OF CARDS</h3>
+            <h3 class="titulo" th:text="${eventName}"></h3>
 
-            <h5>Decrição</h5>
+            <h2>Descrição</h2>
             <p class="descricao"><span th:text="${desc}"></span> </p>
 
-            <h5>Data</h5>
+            <h2>Data</h2>
             <p class="data" ><span th:text="${data}"></span></p>
 
-            <h5>Horário</h5>
+            <h2>Horário</h2>
             <p class="horário"><span th:text="${horario}"></span></p>
 
-            <h5>Endereço</h5>
+            <h2>Endereço</h2>
             <p class="endereco" ><span th:text="${endereco}"></span></p>
 
 
-            <div>
+            <div style="margin-top: 20%">
+                <button role="button" class="botao">
+                    <i class="fas fa-user"></i>
+                </button>
+
+                <button role="button" class="botao" id="favoritar-button">
+                    <i class="fas fa-heart fa-beat"></i>
+                </button>
+                <p id="mensagem-favoritado" style="display: none;">Evento Favoritado</p>
+                <script>
+                    // Seleciona o botão de favoritar pelo ID
+                    const favoritarButton = document.getElementById("favoritar-button");
+                    const mensagemFavoritado = document.getElementById("mensagem-favoritado");
+
+                    // Adiciona um manipulador de eventos para o clique no botão
+                    favoritarButton.addEventListener("click", function () {
+                        // Exibe a mensagem de favoritado
+                        mensagemFavoritado.style.display = "block";
+
+                        // Define um temporizador para ocultar a mensagem após alguns segundos (opcional)
+                        setTimeout(function () {
+                            mensagemFavoritado.style.display = "none";
+                        }, 3000); // A mensagem será oculta após 2 segundos (2000 milissegundos)
+                    });
+                </script>
 
                 <button role="button" class="botao">
-                    <i class="fas fa-play"></i>
-                    FAVORITAR
+                    <i class="fas fa-share"></i>
                 </button>
-                <button role="button" class="botao">
-                    <i class="fas fa-info-circle"></i>
-                    COMPARTILHAR
-                </button>
-                <button role="button" class="botao">
-                    <i class="fas fa-info-circle"></i>
-                    PERFIL DO ANUNCIANTE
-                </button>
+
             </div>
         </div>
     </div>
