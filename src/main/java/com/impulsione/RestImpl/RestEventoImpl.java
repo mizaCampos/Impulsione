@@ -44,6 +44,8 @@ public class RestEventoImpl implements RestEvento {
     @Autowired
     ExtractTimeExample extractTimeExample;
 
+    private Long idEvento;
+
     @Override
     public String register(Model model, Principal principal) {
         if(principal == null){
@@ -147,12 +149,16 @@ public class RestEventoImpl implements RestEvento {
     }
 
 
+    //Usando o ID vindo desse metodo para buscar o perfil do anunciante que o publicou
     @Override
     public String eventoDetalhes(Long id, Model model) {
         Evento evento = eventoService.findById(id);
         log.info(evento.getDate());
         String hora =  extractTimeExample.extrairHora(evento.getDate());
         String data =  extractTimeExample.extrairData(evento.getDate());
+
+        idEvento = id;
+        log.info(idEvento.toString());
 
         model.addAttribute("enventoDTO", evento);
         model.addAttribute("imagem", evento.getImage());
@@ -162,6 +168,27 @@ public class RestEventoImpl implements RestEvento {
         model.addAttribute("desc", evento.getTexto());
         model.addAttribute("endereco", evento.getEndereco());
         return "eventoDetalhes";
+    }
+
+    @Override
+    public String anunciantePerfil(Model model) {
+        if (idEvento == null) {
+            return "redirect:/evento";
+        }
+        Evento evento = eventoService.findById(idEvento);
+        log.info(evento.getEventName());
+        Cliente cliente = evento.getCliente();
+        log.info(cliente.getUsername());
+        if (cliente == null){
+            return "redirect:/evento";
+        }
+        List<Evento>eventos = cliente.getEvents();
+        model.addAttribute("name", cliente.getFirstName());
+        model.addAttribute("contac", cliente.getTelephone());
+        model.addAttribute("addres", cliente.getAddress());
+        model.addAttribute("eventos", eventos);
+
+        return "listEventUser";
     }
 }
 

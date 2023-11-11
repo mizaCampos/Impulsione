@@ -51,4 +51,6 @@ public interface RestEvento {
     @GetMapping("/detalhes/{id}")
     public String eventoDetalhes(@PathVariable("id")Long id, Model model);
 
+    @GetMapping("/anunciante")
+    public String anunciantePerfil(Model model);
 }

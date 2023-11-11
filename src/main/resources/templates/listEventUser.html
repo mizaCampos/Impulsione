@@ -9,8 +9,8 @@
 		<title>Lens by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" th:href="@{assets/css/main2.css}" />
-		<noscript><link rel="stylesheet" th:href="@{assets/css/noscript2.css}" /></noscript>
+		<link rel="stylesheet" th:href="@{/css/main2.css}"/>
+		<noscript><link rel="stylesheet" th:href="@{/css/noscript2.css}"/></noscript>
 	</head>
 	<body class="is-preload-0 is-preload-1 is-preload-2">
 
@@ -19,10 +19,10 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1>London Pub</h1>
+						<h1>Nome: <span th:text="${name}"></span></h1>
 						<p>Descrição:</p>
-						<p>Telefone: </p>
-						<p>Endereço:</p>
+						<p>Telefone:  <span th:text="${contac}"></span></p>
+						<p>Endereço:  <span th:text="${addres}"></span></p>
 						<ul class="icons">
 							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
@@ -33,37 +33,11 @@
 
 				<!-- Thumbnail -->
 					<section id="thumbnails">
-						<article>
-							<a class="thumbnail" href="https://images.sympla.com.br/62a770f82e291.png" data-position="left center"><img src="https://images.sympla.com.br/62a770f82e291.png" alt="" /></a>
-							<h2>NOME DO EVENTO 1</h2>
-							<p>DESCRIÇÃO DO EVENTO</p>
+						<article th:each="evento : ${eventos}">
+							<a class="thumbnail" th:href="*{'data:image/jpeg;base64,' + {evento.image}}" data-position="left center"><img src="" th:src="*{'data:image/jpeg;base64,' + {evento.image}}" alt=""/></a>
+							<h2 th:text="${evento.eventName}">NOME DO EVENTO</h2>
+							<p  th:text="${evento.texto}">DESCRIÇÃO DO EVENTO</p>
 						</article>
-						<article>
-							<a class="thumbnail" href="https://visitelondrina.com.br/wp-content/uploads/2023/02/WhatsApp-Image-2023-02-06-at-11.31.48.jpeg"><img src="https://visitelondrina.com.br/wp-content/uploads/2023/02/WhatsApp-Image-2023-02-06-at-11.31.48.jpeg" alt="" /></a>
-							<h2>Vivamus convallis libero</h2>
-							<p>Sed velit lacus, laoreet at venenatis convallis in lorem tincidunt.</p>
-						</article>
-						<article>
-							<a class="thumbnail" href="https://riometalsite.files.wordpress.com/2023/02/baudorock_cartaz_web.jpg?w=800" data-position="top center"><img src="https://riometalsite.files.wordpress.com/2023/02/baudorock_cartaz_web.jpg?w=800" alt="" /></a>
-							<h2>Nec accumsan enim felis</h2>
-							<p>Maecenas eleifend tellus ut turpis eleifend, vitae pretium faucibus.</p>
-						</article>
-						<article>
-							<a class="thumbnail" href="https://showpass.com.br/images/imagens-site/64c2a38a29811.jpeg"><img src="https://showpass.com.br/images/imagens-site/64c2a38a29811.jpeg" alt="" /></a>
-							<h2>Donec maximus nisi eget</h2>
-							<p>Tristique in nulla vel congue. Sed sociis natoque parturient nascetur.</p>
-						</article>
-						<article>
-							<a class="thumbnail" href="https://www.turismosantos.com.br/static/files_turismosantos/styles/lateral/public/santos%20rock%20frejat.jpg?itok=mu8ze-F2" data-position="top center"><img src="https://www.turismosantos.com.br/static/files_turismosantos/styles/lateral/public/santos%20rock%20frejat.jpg?itok=mu8ze-F2" alt="" /></a>
-							<h2>Nullam vitae nunc vulputate</h2>
-							<p>In pellentesque cursus velit id posuere. Donec vehicula nulla.</p>
-						</article>
-						<article>
-							<a class="thumbnail" href="https://www.agitapirenopolis.com.br/uploads/2021/11/agitapirenopolis_pirenopolis_festival_de_rock_garagem_comedoria_festival.png"><img src="https://www.agitapirenopolis.com.br/uploads/2021/11/agitapirenopolis_pirenopolis_festival_de_rock_garagem_comedoria_festival.png" alt="" /></a>
-							<h2>Phasellus magna faucibus</h2>
-							<p>Nulla dignissim libero maximus tellus varius dictum ut posuere magna.</p>
-						</article>
-					
 					</section>
 
 				<!-- Footer -->
@@ -76,10 +50,10 @@
 			</div>
 
 		<!-- Scripts -->
-			<script th:src="@{assets/js/jquery.min.js}"></script>
-			<script th:src="@{assets/js/browser.min.js}"></script>
-			<script th:src="@{assets/js/breakpoints.min.js}"></script>
-			<script th:src="@{assets/js/main.js}"></script>
+			<script th:src="@{/js/jquery2.min.js}"></script>
+			<script th:src="@{/js/browser2.min.js}"></script>
+			<script th:src="@{/js/breakpoints2.min.js}"></script>
+			<script th:src="@{/js/main2.js}"></script>
 
 
 			<script th:src="@{/js/jquery.scrolly.min.js}"></script>
