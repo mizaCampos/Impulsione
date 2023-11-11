@@ -1,32 +1,65 @@
+html,
+body{
+    height: 100%;
+    width: 100%;
+}
+
 div {
     display: flex;
     width: 95%;
     margin: auto;
 }
 
+.atracao{
+    background-image: url("../../img/Music_concert.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;"
+}
+
+.background-overlay {
+    margin-top: 8%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.553), black );/* Efeito de overlay */
+    z-index: 2;
+}
+
+.background-overlay h1{
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;
+}
 #cardsContainer:hover :not(:hover) {
     opacity: 0.9;
 }
 
 #gmi {
     width: 300px;
-    height: 300px;
-    margin: 5px;
+    height: 350px;
+    border-radius: 5px;
     border: solid rgb(255, 255, 255) 1px;
     transition: 0.5s ease-in-out;
 }
 
 #gmi:hover {
-    width: 320px;
-    height: 320px;
+    width: 290px;
+    height: 340px;
 }
+
 
 :root {
     --color-white: #fff;
     --color-dark1: rgb(39, 39, 39);
     --color-dark2: #2d2d2d;
     --color-dark3: #414141;
-    --color-dark4: #1c1c1c;
+    --color-dark4: #1f1f1f;
     --color-dark5: #343434;
     --color-purple: #b040ff;
 }
@@ -39,7 +72,8 @@ div {
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: var(--color-dark4);
-    background-color: #000000;
+    /*background: linear-gradient(to top,black,black, var(--color-dark4));*/
+    background-color: black;
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
@@ -55,10 +89,9 @@ body {
 
 #header1{
     background-color: #000000;
-}
-
-.active {
-    color: white;
+    background: linear-gradient(to right, black, black, black, #AC01FD,#AC01FD);
+    height: 100px;
+    box-shadow: 0px 44px 80px rgb(0, 0, 0);
 }
 
 .navigation_header {
@@ -85,8 +118,9 @@ body {
 }
 
 .active {
-    background: var(--color-dark3);
-    padding: 10px;
+    background-color: transparent;
+    color: white;
+
     border-radius: 10px;
 }
 
@@ -175,7 +209,7 @@ section h3 {
 
 /* Cor da alça (thumb) da barra de rolagem */
 ::-webkit-scrollbar-thumb {
-    background-color: #000000;
+    background-color: purple;
     /* Substitua pela cor desejada */
     border-radius: 45px;
     /* Borda arredondada */
@@ -226,11 +260,16 @@ main {
 .nav-list {
     list-style: none;
     display: flex;
+    position: relative; /* Adicione position relative para criar contexto de empilhamento */
+    z-index: 1; /* Eleve a lista de navegação principal */
 }
 
 .nav-list li {
+    margin-top: 50px;
     letter-spacing: 3px;
     margin-left: 32px;
+    color: white;
+    position: relative;
 }
 
 
@@ -238,9 +277,10 @@ main {
 .nav-list li:hover .sub-nav-list {
     display: block;
     position: absolute;
-    background: #fff; /* Cor de fundo dos subitens */
+    background: #c67ffa; /* Cor de fundo dos subitens */
+    color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra */
-    z-index: 1; /* Coloca os subitens acima dos outros elementos */
+    z-index: 2; /* Coloca os subitens acima dos outros elementos */
 }
 
 /* Estiliza os subitens quando o mouse está sobre o item pai */
@@ -252,11 +292,15 @@ main {
 .sub-nav-list {
     display: none;
     position: absolute;
+    top: 100%; /* Posicione os subitens abaixo dos itens pai */
+    left: 0;
+    z-index: 3;
 }
 
 /* Estilo dos subitens */
 .sub-nav-list li {
-    display: none;
+    display: inline;
+    margin-right: 10px;
     padding: 10px; /* Espaçamento interno dos subitens */
 }
 
@@ -664,12 +708,13 @@ a {
 
 
 #container {
+    padding: 50px;
+    width: 90%;
+    background-color: rgba(0, 0, 0, 0.56);
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
-    /* Elementos dispostos em coluna */
     align-items: center;
-    /* Centraliza os elementos horizontalmente */
-    padding: 0px;
 }
 
 .categoria-1,
@@ -705,4 +750,114 @@ a {
 .card-image:hover {
     transform: scale(1.05);
     /* Efeito de escala ao passar o mouse */
+}
+
+iframe{
+    background-color: black;
+    width: 100%;
+    height: 500px;
+    border-color: black;
+}
+
+
+
+/* Estilos para o modo escuro */
+.dark-mode {
+    background-color: #000000; /* Fundo escuro */
+    color: #ffffff; /* Texto claro */
+}
+
+.trilho {
+    width: 50px;
+    height: 30px;
+    background-color: #ddd;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.indicador {
+    width: 20px;
+    height: 20px;
+    background-color: #333;
+    border-radius: 50%;
+    margin: 0 5px;
+    transition: transform 0.3s;
+}
+
+/* Animação do indicador no modo escuro */
+.dark-mode-active .indicador {
+    transform: translateX(0); /* Indicador no lado esquerdo no modo escuro */
+}
+
+
+/* Estilos para o modo claro */
+.light-mode {
+    background-color: #fff; /* Fundo claro */
+    color: #000; /* Texto escuro */
+}
+
+.back-to-top {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background: black;
+    -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-radius: 5px;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    z-index: 99;
+    color: var(--white);
+}
+
+/* Estilo para o botão "hamburger" */
+.hamburger-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Estilo para as linhas horizontais no botão "hamburger" */
+.hamburger {
+    width: 30px;
+    height: 3px;
+    background: #333;
+    margin: 4px 0;
+}
+
+/* Estilo para o menu de filtro */
+.filter-menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para a lista de categorias no filtro */
+.filter-list {
+    list-style: none;
+    padding: 0;
+}
+
+/* Estilo para os itens da lista de categorias */
+.filter-list li {
+    padding: 10px 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Mostrar o menu quando o botão "hamburger" é clicado */
+#filterToggle:checked + #filterMenu {
+    display: block;
 }

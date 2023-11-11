@@ -187,6 +187,7 @@ public class RestEventoImpl implements RestEvento {
         model.addAttribute("contac", cliente.getTelephone());
         model.addAttribute("addres", cliente.getAddress());
         model.addAttribute("eventos", eventos);
+        model.addAttribute("imagem", cliente.getImage());
 
         return "listEventUser";
     }

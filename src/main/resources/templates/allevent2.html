@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Responsivo | GN</title>
-    <link th:href="@{/css/allevent2.css}" rel="stylesheet" />
+    <link th:href="@{/css/allevent2.css}" rel="stylesheet"/>
+    <link th:href="@{/css/owl.carousel.min.css}" rel="stylesheet"/>
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
     <link rel="stylesheet" type="text/css"
           href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -15,30 +17,30 @@
 
 <body id="body">
 
-<header>
-    <div class="menu-toggle" id="menuToggle">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-    </div>
+<header id="header1">
+    <!--        <div class="menu-toggle" id="menuToggle">-->
+    <!--            <div class="bar"></div>-->
+    <!--            <div class="bar"></div>-->
+    <!--            <div class="bar"></div>-->
+    <!--        </div>-->
 
-    <div class="menu" id="menu">
+    <!--        <div class="menu" id="menu">-->
 
-        <ul>
-            <li><a><h3>Baixe o App</h3></a></li>
-            <li><a href="/evento">Ínicio</a></li>
-            <li><a href="#">Meus Favoritos</a></li>
-            <li><a href="#">Histórico de Eventos</a></li>
-            <li><a href="#">Minha Pontuação</a></li>
-            <li><a href="#">Mapa de Eventos</a></li>
-            <li><a href="#">Sugestões</a></li>
-            <li><a href="#">Suporte</a></li>
-            <li><a href="#">Configurações</a></li>
-            <li><a href="/logout">Sair</a></li>
-        </ul>
-    </div>
+    <!--            <ul>-->
+    <!--                <li><a><h3>Baixe o App</h3></a></li>-->
+    <!--                <li><a href="/evento">Ínicio</a></li>-->
+    <!--                <li><a href="#">Meus Favoritos</a></li>-->
+    <!--                <li><a href="#">Histórico de Eventos</a></li>-->
+    <!--                <li><a href="#">Minha Pontuação</a></li>-->
+    <!--                <li><a href="#">Mapa de Eventos</a></li>-->
+    <!--                <li><a href="#">Sugestões</a></li>-->
+    <!--                <li><a href="#">Suporte</a></li>-->
+    <!--                <li><a href="/cliente/privacidade">Configurações</a></li>-->
+    <!--                <li><a href="/logout">Sair</a></li>-->
+    <!--            </ul>-->
+    <!--        </div>-->
     <nav>
-        <a class="logo" href="#" style="color: #b040ff;">IMPULSIONE</a>
+        <a class="logo" href="#" style="color: #ffffff;"></a>
         <div class="mobile-menu">
             <div class="line1"></div>
             <div class="line2"></div>
@@ -61,210 +63,235 @@
             <li><a href="/index">Início</a></li>
             <li><a href="#">Sobre</a></li>
             <li><a href="/cliente/eventos">Meus eventos</a></li>
-            <li><a href="#">Contato</a></li>
-            <li><a href="/cliente/privacidade"><img style="height: 30px; width: 30px;" th:src="@{|data:image/jpeg;base64,${imagem}|}"></a></li>
+            <li><a href="/cliente/privacidade">Configurações</a></li>
+            <!--                <li>-->
+            <!--                    <div class="trilho" id="modeToggle">-->
+            <!--                        <div class="indicador"></div>-->
+            <!--                    </div>-->
+            <!--                </li>-->
+            <li><a href="/cliente/privacidade"><img style="height: 60px; width: 60px;" th:src="@{|data:image/jpeg;base64,${imagem}|}"></a></li>
         </ul>
     </nav>
 </header>
 
+<!--        <iframe src="/evento/detalhes"></iframe>-->
 
-<div id="container">
+<div class="atracao">
 
+    <div class="background-overlay">
+        <h1>
 
-    <div class="slogan" style="color: #ffffff;">
-
-        <h3>Eventos ao seu alcance: Descubra, Conecte-se!</h3>
-
+        </h1>
     </div>
-
-    <ul class="nav-list">
-        <li>
-            <a href="#">Shows</a>
-            <ul class="sub-nav-list">
-                <li><a href="#">Gospel</a></li>
-                <li><a href="#">Stand-up</a></li>
-                <li><a href="#">Rock</a></li>
-                <li><a href="#">Eletrônica</a></li>
-                <li><a href="#">Sertanejo</a></li>
-                <li><a href="#">Pagode</a></li>
-                <li><a href="#">Rap</a></li>
-                <li><a href="#">Rave</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="#">Palestras</a>
-            <ul class="sub-nav-list">
-                <li><a href="#categoria-2">Educação</a></li>
-                <li><a href="#">Motivacional</a></li>
-                <li><a href="#">Tecnologia</a></li>
-                <li><a href="#">Meio Ambiente</a></li>
-                <li><a href="#">Saúde e Bem-Estar</a></li>
-                <li><a href="#">Negócios</a></li>
-
-            </ul>
-        </li>
-        <li>
-            <a href="#">Workshops</a>
-            <ul class="sub-nav-list">
-                <li><a href="#categoria-3">Tecnologia</a></li>
-                <li><a href="#">Artes</a></li>
-
-            </ul>
-        </li>
-        <li>
-            <a href="#">Teatro</a>
-            <ul class="sub-nav-list">
-                <li><a href="#categoria-3">Comédia</a></li>
-                <li><a href="#">Dança</a></li>
-
-            </ul>
-        </li>
-
-        <li>
-            <a href="#">Exposições</a>
-            <ul class="sub-nav-list">
-                <li><a href="#categoria-5">Arte Moderna</a></li>
-                <li><a href="#">Agrícola</a></li>
-                <li><a href="#">História</a></li>
-                <li><a href="#">Ciência e Tecnologia</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="#">Eventos Esportivos</a>
-            <ul class="sub-nav-list">
-                <li><a href="#categoria-6">Futebol</a></li>
-                <li><a href="#">Basquete</a></li>
-                <li><a href="#">Volêi</a></li>
-            </ul>
-        </li>
-    </ul>
-
-
-    <section>
-        <div id="shows" class="melhoresEventos">
-            <h3>SHOWS</h3>
-        </div>
-
-
-        <div class="cards-container" id="cardsContainer">
-            <th:block th:each="evento : ${eventoShowList}">
-                <a th:href="@{/evento/detalhes/{id} (id = ${evento.id})}" class="btn btn-primary"><img id="gmi" th:src="|data:image/jpeg;base64,${evento.image}|"></a>
-            </th:block>
-        </div>
-    </section>
-
-
-
-    <section>
-        <div id="palestras" class="melhoresEventos">
-            <h3>Palestras</h3>
-        </div>
-
-        <div class="cards-container" id="cardsContainer2" th:each="evento : ${eventoPalestraList}">
-            <a th:href="@{/evento/detalhes/{id} (id = ${evento.id})}" class="btn btn-primary"><img id="gmi" th:src="|data:image/jpeg;base64,${evento.image}|"></a>
-        </div>
-    </section>
-
-
-
-    <section>
-        <div id="workshops" class="melhoresEventos">
-            <h3>Workshops</h3>
-        </div>
-        <div class="cards-container" id="cardsContainer3" th:each="evento : ${eventoWorkshopList}">
-            <a th:href="@{/evento/detalhes/{id} (id = ${evento.id})}" class="btn btn-primary"><img id="gmi" th:src="|data:image/jpeg;base64,${evento.image}|"></a>
-        </div>
-    </section>
-
-
-
-    <section>
-        <div id="teatro" class="melhoresEventos">
-            <h3>Teatros</h3>
-        </div>
-        <div class="cards-container" id="cardsContainer4" th:each="evento : ${eventoTeatroList}">
-            <a th:href="@{/evento/detalhes/{id} (id = ${evento.id})}" class="btn btn-primary"><img id="gmi" th:src="|data:image/jpeg;base64,${evento.image}|"></a>
-        </div>
-    </section>
-
-    <section>
-        <div id="exposicoes" class="melhoresEventos">
-            <h3>Exposições</h3>
-        </div>
-        <div class="cards-container" id="cardsContainer5" th:each="evento : ${eventoExposicaoList}">
-            <a th:href="@{/evento/detalhes/{id} (id = ${evento.id})}" class="btn btn-primary"><img id="gmi" th:src="|data:image/jpeg;base64,${evento.image}|"></a>
-        </div>
-    </section>
-
-    <section>
-        <div id="eventosEsportivos" class="melhoresEventos">
-            <h3>Eventos Esportivos</h3>
-        </div>
-        <div class="cards-container" id="cardsContainer6" th:each="evento : ${eventoEsportList}">
-            <a th:href="@{/evento/detalhes/{id} (id = ${evento.id})}" class="btn btn-primary"><img id="gmi" th:src="|data:image/jpeg;base64,${evento.image}|"></a>
-        </div>
-    </section>
 
 </div>
 
+<!--        <div class="slogan" style="color: #ffffff;">-->
 
-<script>
-    $(document).ready(function(){
-        $("#cardsContainer2").slick({
-            infinite: true,
-            slidesToShow: 5, // Quantos cards são exibidos por vez
-            slidesToScroll: 5,
+<!--            <h3>Eventos ao seu alcance: Descubra, Conecte-se!</h3>-->
 
-        });
-    });
-</script>
-<script>
-    $(document).ready(function(){
-        $("#cardsContainer3").slick({
-            infinite: true,
-            slidesToShow: 5, // Quantos cards são exibidos por vez
-            slidesToScroll: 2,
+<!--        </div>-->
 
-        });
-    });
-</script>
-<script>
-    $(document).ready(function(){
-        $("#cardsContainer4").slick({
-            infinite: true,
-            slidesToShow: 5, // Quantos cards são exibidos por vez
-            slidesToScroll: 5,
+<!--        <ul class="nav-list">-->
+<!--            <li>-->
+<!--                <a href="#">Shows</a>-->
+<!--                <ul class="sub-nav-list">-->
+<!--                    <li><a href="#">Gospel</a></li>-->
+<!--                    <li><a href="#">Stand-up</a></li>-->
+<!--                    <li><a href="#">Rock</a></li>-->
+<!--                    <li><a href="#">Eletrônica</a></li>-->
+<!--                    <li><a href="#">Sertanejo</a></li>-->
+<!--                    <li><a href="#">Pagode</a></li>-->
+<!--                    <li><a href="#">Rap</a></li>-->
+<!--                    <li><a href="#">Rave</a></li>-->
+<!--                </ul>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <a href="#">Palestras</a>-->
+<!--                <ul class="sub-nav-list">-->
+<!--                    <li><a href="#categoria-2">Educação</a></li>-->
+<!--                    <li><a href="#">Motivacional</a></li>-->
+<!--                    <li><a href="#">Tecnologia</a></li>-->
+<!--                    <li><a href="#">Meio Ambiente</a></li>-->
+<!--                    <li><a href="#">Saúde e Bem-Estar</a></li>-->
+<!--                    <li><a href="#">Negócios</a></li>-->
 
-        });
-    });
-</script>
-<script>
-    $(document).ready(function(){
-        $("#cardsContainer5").slick({
-            infinite: true,
-            slidesToShow: 3, // Quantos cards são exibidos por vez
-            slidesToScroll: 5,
+<!--                </ul>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <a href="#">Workshops</a>-->
+<!--                <ul class="sub-nav-list">-->
+<!--                    <li><a href="#categoria-3">Tecnologia</a></li>-->
+<!--                    <li><a href="#">Artes</a></li>-->
 
-        });
-    });
-</script>
-<script>
-    $(document).ready(function(){
-        $("#cardsContainer6").slick({
-            infinite: true,
-            slidesToShow: 2, // Quantos cards são exibidos por vez
-            slidesToScroll: 5,
-            prevArrow: '<div class="arrow left-arrow" id="leftArrow">&lt;</div>',
-            nextArrow: '<div class="arrow right-arrow" id="rightArrow">&gt;</div>'
-        });
-    });
-</script>
+<!--                </ul>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <a href="#">Teatro</a>-->
+<!--                <ul class="sub-nav-list">-->
+<!--                    <li><a href="#categoria-3">Comédia</a></li>-->
+<!--                    <li><a href="#">Dança</a></li>-->
+
+<!--                </ul>-->
+<!--            </li>-->
+
+<!--            <li>-->
+<!--                <a href="#">Exposições</a>-->
+<!--                <ul class="sub-nav-list">-->
+<!--                    <li><a href="#categoria-5">Arte Moderna</a></li>-->
+<!--                    <li><a href="#">Agrícola</a></li>-->
+<!--                    <li><a href="#">História</a></li>-->
+<!--                    <li><a href="#">Ciência e Tecnologia</a></li>-->
+<!--                </ul>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <a href="#">Eventos Esportivos</a>-->
+<!--                <ul class="sub-nav-list">-->
+<!--                    <li><a href="#categoria-6">Futebol</a></li>-->
+<!--                    <li><a href="#">Basquete</a></li>-->
+<!--                    <li><a href="#">Volêi</a></li>-->
+<!--                </ul>-->
+<!--            </li>-->
+<!--        </ul>-->
+
+<ul class="nav-list">
+    <li>
+        <a href="#">Shows</a>
+        <!--            <ul class="sub-nav-list">-->
+        <!--                <li><a href="#">Gospel</a></li>-->
+        <!--                <li><a href="#">Stand-up</a></li>-->
+        <!--                <li><a href="#">Rock</a></li>-->
+        <!--                <li><a href="#">Eletrônica</a></li>-->
+        <!--                <li><a href="#">Sertanejo</a></li>-->
+        <!--                <li><a href="#">Pagode</a></li>-->
+        <!--                <li><a href="#">Rap</a></li>-->
+        <!--                <li><a href="#">Rave</a></li>-->
+        <!--            </ul>-->
+    </li>
+    <li>
+        <a href="#">Palestras</a>
+        <!--            <ul class="sub-nav-list">-->
+        <!--                <li><a href="#">Educação</a></li>-->
+        <!--                <li><a href="#">Motivacional</a></li>-->
+        <!--                <li><a href="#">Tecnologia</a></li>-->
+        <!--                <li><a href="#">Meio Ambiente</a></li>-->
+        <!--                <li><a href="#">Saúde e Bem-Estar</a></li>-->
+        <!--                <li><a href="#">Negócios</a></li>-->
+
+        <!--            </ul>-->
+    </li>
+    <li>
+        <a href="#">Workshops</a>
+        <ul class="sub-nav-list">
+            <!--                <li><a href="#">Tecnologia</a></li>-->
+            <!--                <li><a href="#">Artes</a></li>-->
+
+        </ul>
+    </li>
+    <li><a href="#">Teatro</a></li>
+    <li>
+        <a href="#">Exposições</a>
+        <!--            <ul class="sub-nav-list">-->
+        <!--                <li><a href="#">Arte Moderna</a></li>-->
+        <!--                <li><a href="#">Agrícola</a></li>-->
+        <!--                <li><a href="#">História</a></li>-->
+        <!--                <li><a href="#">Ciência e Tecnologia</a></li>-->
+        <!--            </ul>-->
+    </li>
+    <li>
+        <a href="#">Eventos Esportivos</a>
+        <ul class="sub-nav-list">
+            <!--                <li><a href="#">Futebol</a></li>-->
+            <!--                <li><a href="#">Basquete</a></li>-->
+            <!--                <li><a href="#">Volêi</a></li>-->
+        </ul>
+    </li>
+</ul>
 
 
+<section>
+    <div id="shows" class="melhoresEventos">
+        <h3>SHOWS</h3>
+    </div>
+
+
+    <div class="owl-carousel" id="cardsContainer">
+        <th:block th:each="evento : ${eventoShowList}">
+            <a th:href="@{/evento/detalhes/{id} (id = ${evento.id})}" target="_blank" class="btn btn-primary"><img id="gmi" th:src="|data:image/jpeg;base64,${evento.image}|"></a>
+        </th:block>
+    </div>
+</section>
+
+<section>
+    <div id="palestras" class="melhoresEventos">
+        <h3>PALESTRAS</h3>
+    </div>
+
+
+    <div class="owl-carousel" id="cardsContainer">
+        <th:block th:each="evento : ${eventoPalestraList}">
+            <a th:href="@{/evento/detalhes/{id} (id = ${evento.id})}" target="_blank" class="btn btn-primary"><img id="gmi" th:src="|data:image/jpeg;base64,${evento.image}|"></a>
+        </th:block>
+    </div>
+</section>
+
+<section>
+    <div id="workshops" class="melhoresEventos">
+        <h3>Workshops</h3>
+    </div>
+
+
+    <div class="owl-carousel" id="cardsContainer3">
+        <th:block th:each="evento : ${eventoWorkshopList}">
+            <a th:href="@{/evento/detalhes/{id} (id = ${evento.id})}" target="_blank" class="btn btn-primary"><img id="gmi" th:src="|data:image/jpeg;base64,${evento.image}|"></a>
+        </th:block>
+    </div>
+</section>
+
+<section>
+    <div id="teatro" class="melhoresEventos">
+        <h3>Teatros</h3>
+    </div>
+
+
+    <div class="owl-carousel" id="cardsContainer4">
+        <th:block th:each="evento : ${eventoTeatroList}">
+            <a th:href="@{/evento/detalhes/{id} (id = ${evento.id})}" target="_blank" class="btn btn-primary"><img id="gmi" th:src="|data:image/jpeg;base64,${evento.image}|"></a>
+        </th:block>
+    </div>
+</section>
+
+<section>
+    <div id="exposicoes" class="melhoresEventos">
+        <h3>Exposições</h3>
+    </div>
+
+    <div class="owl-carousel" id="cardsContainer5">
+        <th:block th:each="evento : ${eventoExposicaoList}">
+            <a th:href="@{/evento/detalhes/{id} (id = ${evento.id})}" target="_blank" class="btn btn-primary"><img id="gmi" th:src="|data:image/jpeg;base64,${evento.image}|"></a>
+        </th:block>
+    </div>
+</section>
+
+<section>
+    <div id="eventosEsportivos" class="melhoresEventos">
+        <h3>Eventos Esportivos</h3>
+    </div>
+
+    <div class="owl-carousel" id="cardsContainer6">
+        <th:block th:each="evento : ${eventoEsportList}">
+            <a th:href="@{/evento/detalhes/{id} (id = ${evento.id})}" target="_blank" class="btn btn-primary"><img id="gmi" th:src="|data:image/jpeg;base64,${evento.image}|"></a>
+        </th:block>
+    </div>
+</section>
+
+
+<script th:src="@{/js/allevent2.js}"></script>
+<script th:src="@{/js/owl.carousel.min.js}"></script>
 </body>
 
 
 
-<script th:src="@{/js/allevent2.js}"></script>
+
 
 </html>
